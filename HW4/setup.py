@@ -25,6 +25,7 @@ from tqdm import tqdm
 from zipfile import ZipFile
 
 
+
 def download_url(url, output_path, show_progress=True):
     class DownloadProgressBar(tqdm):
         def update_to(self, b=1, bsize=1, tsize=None):
@@ -93,6 +94,7 @@ def process_file(filename, data_type, word_counter, char_counter, nlp):
     examples = []
     eval_examples = {}
     total = 0
+
     with open(filename, "r") as fh:
         source = json.load(fh)
         for article in tqdm(source["data"]):
